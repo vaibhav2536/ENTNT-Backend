@@ -1,0 +1,48 @@
+{
+  "name": "bun-backn",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "BUN_ENV=development bun --watch --smol src/index.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "lint": "bun prettier --check .",
+    "format": "bun prettier . --write",
+    "db:interactive": "bunx drizzle-kit studio"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/morgan": "^1.9.9",
+    "@types/multer": "^1.4.12",
+    "drizzle-kit": "^0.28.1",
+    "prettier": "3.3.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.0.0",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.36.3",
+    "express": "^4.21.1",
+    "googleapis": "^144.0.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.4",
+    "node-cron": "^3.0.3",
+    "prisma": "^6.0.0",
+    "redis": "^4.7.0",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}
