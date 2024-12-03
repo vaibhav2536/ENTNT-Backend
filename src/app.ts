@@ -42,7 +42,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(multer().none());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://zapmail.vercel.app"],
+    origin: ["http://localhost:5173"],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   }),
 );
@@ -51,11 +51,11 @@ app.use("/v1", v1Router);
 
 app.get("/", (_: Request, res: Response) => {
   try {
-    logger.log("info", "Welcome to the Zapmail backend!", {
+    logger.log("info", "Welcome to the backend!", {
       file: "index.js",
       timestamp: new Date().toISOString(),
     });
-    return SuccessResponse.send(res, {}, "Welcome to the Zapmail backend!");
+    return SuccessResponse.send(res, {}, "Welcome to the backend!");
   } catch (error: any) {
     logger.error(`Error in getting root: ${error.message}`, error);
     return InternalServerErrorResponse.send(res, "Internal Server Error");
